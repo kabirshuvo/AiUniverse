@@ -111,16 +111,16 @@ enterpricePricing.innerHTML = data.data.pricing[2].price;
 
 //******************Featears Section */
 
-const aiFeatures = document.getElementById('features-ul');
-console.log(data.data);
-const features = data.data.features;
-console.log(data.data)
 
-for (const [key, value] of Object.entries(features)) {
-const li = document.createElement('li');
-li.innerText = `Feature ${key}: ${value.name} - ${value.description}`;
-aiFeatures.appendChild(li);
+
+const features = data.data.features['1'].feature_name;
+if(features && features.length > 0){
+  const aiFeatures = document.getElementById('features');
+  aiFeatures.innerText = 'features:';
+  console.log(aiFeatures);
 }
+
+console.log(data.data.features['1'].feature_name);
 
   //** */
 
