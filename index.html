@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awsome -->
+    <!-- Bootstrap >>> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap^^^ -->
+    <title>AI Universe Hub</title>
+  </head>
+  <body class="container">
+    <header class="text-center my-5">
+      <h1 class="bg-body-secondary text-center text-primary py-3 rounded">
+        AI Universe Hub
+      </h1>
+
+      <button
+        id="sort-by-date"
+        onclick="sortByDate()"
+        class="btn btn-primary mx-5 my-2"
+      >
+        Sort By Date
+      </button>
+    </header>
+    <main>
+      <section>
+        <div id="ais-container" class="row row-cols-1 row-cols-md-3 g-4"></div>
+      </section>
+      <!--* Spinner -->
+      <section>
+        <div id="toggleSpinner" class="text-center p-5 d-none">
+          <div class="spinner-border text-bg-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div
+          id="more-ais-container"
+          class="row row-cols-1 row-cols-md-3 g-4 py-4"
+        ></div>
+      </section>
+
+      <section>
+        <!-- Modal Structure -->
+        <div
+          class="modal fade"
+          id="aiDetailModal"
+          tabindex="-1"
+          aria-labelledby="aiDetailModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="aiDetailModalLabel">
+                  Modal title
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <!-- ***********Modal dilo dola re************** -->
+                <div class="container" id="modal-container">
+                  <div class="w-100">
+                    <button class="btn-close" id="close"></button>
+                    <div class="d-flex gap-2">
+                      <div class="mx-auto d-flex flex-column text-center">
+                        <div>
+                          <p id="ai-description"></p>
+                        </div>
+                        <div id="pricing-table" class="d-flex gap-2">
+                          <div>
+                            <p id="ai-plan1" class="ai-pricing"></p>
+                            <p id="ai-pricing"></p>
+                          </div>
+                          <div>
+                            <p id="aiProPlan" class="ai-pricing"></p>
+                            <p id="ai-pro-pricing"></p>
+                          </div>
+                          <div>
+                            <p id="enterpriec-plan" class="ai-pricing"></p>
+                            <p id="enterpriec-pricing"></p>
+                          </div>
+                        </div>
+                        <div class="d-flex gap-2 p-2">
+                          <div>
+                            <h3 id="features">Features</h3>
+                            <ul id="features-ul"></ul>
+                          </div>
+                          <div id="integrations">
+                            <h3>Integrations</h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mx-auto d-flex flex-column text-center">
+                        <div
+                          id="modal-img-div"
+                          class="text-center position-relative"
+                        ></div>
+                        <p
+                          id="accuracy-score"
+                          class="position-absolute top-0 float-end m-2 p-2 bg-primary rounded-1 px-2"
+                        >
+                          Accuracy 94%
+                        </p>
+                        <div id="ai-input-outpt">
+                          ${aiDetails.inputOutputExamples[0]}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ***** -->
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center p-5">
+      <button onclick="getMoreAi()" id="See-More" class="btn btn-primary">
+        See More
+      </button>
+    </footer>
+
+    <!-- My Scripts -->
+    <script src="./aiUHub.js"></script>
+    <script src="./seeMore.js"></script>
+
+    <!-- FontAwsome -->
+    <script
+      src="https://kit.fontawesome.com/6d98f0678f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- BootStrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
